@@ -1,18 +1,66 @@
+// Variables
+const startButton = document.getElementsByClassName("start")[0];
+const stopButton = document.getElementsByClassName("stop")[0];
+let oneMilli = document.getElementById("msHundredths");
+let tenMilli = document.getElementById('msTens');
+let secondOnes = document.getElementById('secondOnes');
+let secondTens = document.getElementById('secondTens');
+let Timer;
 
-//declerations
-
-
-
-let count = 0;
 //functions
-let msTens = document.querySelector('#msTens');
-let msHundreds = document.querySelector('#msHundreds');
+function initializeTimer() {
+  oneMilli.innerHTML = 0;
+  tenMilli.innerHTML = 0;
+  secondOnes.innerHTML = 0;
+  secondTens.innerHTML = 0;
+}
 
-clearInterval(function(){
-    for (i = 0; i < 10; i++){
-        msTens = i;
-        if (msTens === 10){
-            msTens.style.color = "red";
+function startTimer() {
+  initializeTimer();
+  Timer = window.setInterval(function() {
+    if(parseInt(oneMilli.innerText) > 8) {
+      oneMilli.innerHTML = 0;
+      tenMilli.innerHTML = parseInt(tenMilli.innerText) + 1;
+      if(parseInt(tenMilli.innerText) > 9) {
+        tenMilli.innerHTML = 0;
+        secondOnes.innerHTML = parseInt(secondOnes.innerText) + 1;
+        if(parseInt(secondOnes.innerText) > 9) {
+          secondOnes.innerHTML = 0;
+          secondTens.innerHTML = parseInt(secondTens.innerText) + 1;
+  
+        
+          return stopTimer();
         }
+      }
     }
-}, 1000);
+    oneMilli.innerHTML = parseInt(oneMilli.innerText) + 1;
+  }, 10);
+}
+
+function stopTimer() {
+  clearInterval(Timer);
+}
+function changeDigitColor() {
+    var digitList = document.querySelectorAll(".digitContainer");
+    for (let i = 0; i < array.length; i++) {
+        if(digitList !== digitlist[2]){
+digitList.style.color = "red"
+        }
+        
+    }
+}
+
+
+// DOM
+window.onload = function() {
+  window.addEventListener("click", function(event) {
+    if (event.target.nodeName === "BUTTON") {
+      if (event.target.classList.value === "start") {
+        stopTimer();
+        startTimer();
+      } else {
+        stopTimer();
+      }
+    }
+  });
+};

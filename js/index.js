@@ -62,8 +62,8 @@ const titleButton = document.querySelector('.cta-text button');
 const titleImg = document.getElementById("cta-img");
 
 //able to create a break in the text using innerHTML instead of textContent
-let titleString = "DOM <br />  Is  <br />  Awesome";
-title.innerHTML = titleString;
+
+title.innerHTML = "DOM <br />  Is  <br />  Awesome";
 titleButton.textContent = "Get Started";
 titleImg.src = "/img/header-img.png";
 
@@ -98,10 +98,9 @@ bottomP[2].textContent = "Vision content elementum magna eros, ac posuere elvit 
 const contactH4 = document.querySelector('.contact h4');
 const contactP = document.querySelectorAll('.contact p');
 
-let contactStr = "123 Way 456 Street <br /> Somewhere, USA";
 
 contactH4.textContent = "Contact";
-contactP[0].innerHTML = contactStr;
+contactP[0].innerHTML = "123 Way 456 Street <br /> Somewhere, USA";
 contactP[1].textContent = "1 (888) 888-8888";
 contactP[2].textContent = "sales@greatidea.io";
 
