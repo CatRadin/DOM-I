@@ -37,6 +37,8 @@ const siteContent = {
   },
 };
 
+
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.src = "/img/logo.png"
@@ -103,10 +105,27 @@ contactP[0].innerHTML = contactStr;
 contactP[1].textContent = "1 (888) 888-8888";
 contactP[2].textContent = "sales@greatidea.io";
 
-// FOOTER --------------------------------------------------------------\
+// FOOTER --------------------------------------------------------------
 
 const footerP = document.querySelector('footer p');
 footerP.textContent = "Copyright Great Idea! 2018"
+
+//STRETCH GOALS -----------------------------------------------------------
+
+//STYLE CHANGES
+
+titleButton.style.background = "black";
+titleButton.style.color = "white";
+titleButton.style.borderRadius = "2rem";
+
+//EVENT LISTENER 
+titleButton.addEventListener('click',bigAlert);
+
+//FUNCTIONS
+
+function bigAlert(){
+alert('The button has been pressed');
+}
 
 
 
